@@ -35,6 +35,24 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Google.Apis.Discovery.v1": {
+              "target": "Package",
+              "version": "[1.50.0, )"
+            },
+            "Google.Apis.Gmail.v1": {
+              "target": "Package",
+              "version": "[1.50.0.2235, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
