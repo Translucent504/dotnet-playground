@@ -16,12 +16,44 @@ using static System.Console;
 
 var factory = new CookbookContextFactory();
 using var context = factory.CreateDbContext();
-var a = context.Dishes.Count();
-System.Console.WriteLine(a);
-System.Console.WriteLine("Lets add something");
-context.Dishes.Add(new Dish { Title = "my Dish", Notes = "This is good dish", Stars = 4 });
+
+// exp 1
+
+var newDish = new Dish { Title = "foo", Notes = "bar" };
+context.Dishes.Add(newDish);
 await context.SaveChangesAsync();
-System.Console.WriteLine(context.Dishes.Count());
+newDish.Notes = "Baz";
+await context.SaveChangesAsync();
+
+await EntityStates(factory);
+await ChangeTracking(factory);
+static async Task EntityStates(CookbookContextFactory factory)
+{
+  using var context = factory.CreateDbContext();
+
+  var newDish = new Dish { Title = "title", Notes = "notes" };
+  var state = context.Entry(newDish).State;
+
+  context.Dishes.Add(newDish);
+  state = context.Entry(newDish).State;
+
+}
+
+static async Task ChangeTracking(CookbookContextFactory factory)
+{
+  using var dbContext = factory.CreateDbContext();
+
+  var newDish = new Dish { Title = "foo", Notes = "bar" };
+  dbContext.Dishes.Add(newDish);
+  await dbContext.SaveChangesAsync();
+  newDish.Notes = "Baz";
+
+  var entry = dbContext.Entry(newDish);
+  var originalValue = entry.OriginalValues[nameof(Dish.Notes)].ToString(); // original value is the value that entityframework knows is in the database. It compares the values of the object with the original value to see if it has changed compared to the database. It
+
+
+}
+
 class Dish
 {
   public int Id { get; set; }
