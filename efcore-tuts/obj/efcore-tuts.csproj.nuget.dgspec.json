@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/eru/repos/dotnet-playground/efcore-tuts/efcore-tuts.csproj": {}
+  },
+  "projects": {
+    "/home/eru/repos/dotnet-playground/efcore-tuts/efcore-tuts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/eru/repos/dotnet-playground/efcore-tuts/efcore-tuts.csproj",
+        "projectName": "efcore-tuts",
+        "projectPath": "/home/eru/repos/dotnet-playground/efcore-tuts/efcore-tuts.csproj",
+        "packagesPath": "/home/eru/.nuget/packages/",
+        "outputPath": "/home/eru/repos/dotnet-playground/efcore-tuts/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/eru/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
